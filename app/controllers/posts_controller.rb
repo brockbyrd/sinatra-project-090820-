@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     get '/posts/new' do
         if !authenticate
             erb :'posts/new'
+        end
     end
 
     post '/posts' do
@@ -53,6 +54,9 @@ class PostsController < ApplicationController
             else
                 redirect '/posts'
             end
+        end
     end
+
+
 
 end
