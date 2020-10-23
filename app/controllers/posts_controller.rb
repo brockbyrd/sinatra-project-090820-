@@ -23,4 +23,11 @@ class PostsController < ApplicationController
         end
     end
 
+    get '/posts/:id' do
+        if !authenticate
+            @post = Post.posts.find_by_id(params[:id])
+            erb :'/posts/show'
+        end
+    end
+
 end
