@@ -30,4 +30,29 @@ class PostsController < ApplicationController
         end
     end
 
+    get '/posts/:id/edit' do
+        if !authenticate
+            @post = current_user.posts.find_by_id(params[:id])
+            if @post
+                erb :'/posts/edit'
+            else
+                redirect '/posts'
+            end
+        end
+    end
+
+    patch '/posts/:id' do
+        if !authenticate
+            @post = current_user.posts.find_by_id(params[:id])
+            if @post
+                if @post.update(content: params[:content])
+                    redirect "/posts/#{@post.id}"
+                else
+                    redirect "/posts/#{@post.id}/edit"
+                end
+            else
+                redirect '/posts'
+            end
+    end
+
 end
