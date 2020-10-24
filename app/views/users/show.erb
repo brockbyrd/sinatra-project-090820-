@@ -1,4 +1,12 @@
-# show page for a users profile
-
-#displays a page that shows all of the posts a user has made
-
+<h1><% if @user == current_user %>Your <% else %> <%= @user.username %>'s <% end %> posts!</h1>
+<% posts = @user.posts.sort_by {|post| post.id}.reverse %>
+<% posts.each do |post| %>
+    <div class="center">
+        <div class="username">
+            <a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a>
+        </div>
+        <div class="post">
+            <a href="/posts/<%= post.id %>"><%= post.content %></a>
+        </div>
+    </div>
+<% end %>
