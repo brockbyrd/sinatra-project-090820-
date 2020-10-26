@@ -1,3 +1,8 @@
-# displays a page of all teams created
+<h1> Welcome, <%= current_user.username %></h1>
+<h3>Here's the teams:</h3>
 
-# displays a button to create a new team
+<% @teams.each do |team| %>
+
+    <%= team.city %> <a href="/teams/<%= team.id %>"><%= team.name %></a>
+
+<% end %>
