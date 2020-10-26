@@ -1,1 +1,9 @@
-# displays all of the posts made about a specific team
+<%= @team.city %> <%= @team.name %>
+
+<% @team.posts.each do |post| %>
+
+
+    <a href="/users/<%= post.user.id %>">@<%= post.user.username%></a>
+    <a href="/posts/<%= post.id %>"><%= post.content %></a>
+
+<% end %>
