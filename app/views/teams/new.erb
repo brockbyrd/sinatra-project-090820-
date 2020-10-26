@@ -1,1 +1,10 @@
-# displays a form to create a new team
+<% if logged_in? %>
+    <form action='/teams' method='post'>
+    City Name:
+    <input type="text" name="city">
+    Team Name:
+    <input type="text" name="name">
+
+<% else %>
+    <h1> You Must Be Logged in to Make Tweets </h1>
+<% end %>
