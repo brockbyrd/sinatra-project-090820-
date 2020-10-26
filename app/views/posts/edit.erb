@@ -1,1 +1,8 @@
-# sets up form to be able to edit a post that has been created by a user
+<form method="POST" action="/posts/<%= @post.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    <input type="text" name="content" value="<%= @post.content %>">
+
+    <input type="submit" value="submit">
+
+</form>
