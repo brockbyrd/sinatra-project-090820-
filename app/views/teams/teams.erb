@@ -3,6 +3,6 @@
 
 <% @teams.each do |team| %>
 
-    <%= team.city %> <a href="/teams/<%= team.id %>"><%= team.name %></a>
+    <a href="/teams/<%= team.id %>"><%= team.city %> <%= team.name %></a>
 
 <% end %>
