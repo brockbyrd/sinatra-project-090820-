@@ -3,10 +3,10 @@
   <% if logged_in? %>
 
 
-    <p>Welcome, <%= current_user.username %></p>
-    <a href=""> Go Home </a>
-    <a href=""> See Teams </a>
-    <a href=""> See Posts </a>
+    <p> Welcome, <%= current_user.username %></p>
+    <a href="/users/<%= current_user.username %>"> Go Home </a>
+    <a href="/teams"> See Teams </a>
+    <a href="/posts"> See Posts </a>
     <a href="/logout"> Log Out </a>
 
   <% else %>
