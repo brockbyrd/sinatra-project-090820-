@@ -1,4 +1,3 @@
-# show page for a post that has been created
+<a href="/users/<%= @post.user.slug %>">@<%= @post.user.username %>
 
-# displays a button to edit or delete post if created by the user
-
+<%= @post.content %>
