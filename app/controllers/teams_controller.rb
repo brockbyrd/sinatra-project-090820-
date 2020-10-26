@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 
     post '/teams' do
         if !authenticate
-            @team = Team.build(city: params[:city], name: params[:name])
+            @team = Team.new(city: params[:city], name: params[:name])
                 if @team.save
                     redirect '/teams'
                 else
