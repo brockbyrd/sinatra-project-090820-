@@ -1,8 +1,0 @@
-<h1> Welcome, <%= current_user.username %></h1>
-<h3>Here's the teams:</h3>
-
-<% @teams.each do |team| %>
-
-    <a href="/teams/<%= team.id %>"><%= team.city %> <%= team.name %></a>
-
-<% end %>

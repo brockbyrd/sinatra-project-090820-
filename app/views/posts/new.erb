@@ -1,21 +1,23 @@
-<% if logged_in? %>
-  <form action='/posts' method='POST'>
-    <div class="form-row align-items-center">
-      <div class="col-auto my-1">
-      <p>Content:</p>
-      <input type="text" name="content">
-        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="team_id">
-        <option selected>Choose Team...</option>
-          <% Team.all.each do |team| %>
-              <option id="<%= team.id %>" value="<%= team.id %>"><a class="dropdown-item"><%= team.city %> <%= team.name %></a></option>
-          <% end %>
-        </select>
-      <div class="col-auto my-1">
-        <button type="submit" class="btn btn-primary">Submit</button>
+<div class="center">
+  <% if logged_in? %>
+    <form action='/posts' method='POST'>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+        <p>Content:</p>
+        <input type="text" name="content">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="team_id">
+          <option selected>Choose Team...</option>
+            <% Team.all.each do |team| %>
+                <option id="<%= team.id %>" value="<%= team.id %>"><a class="dropdown-item"><%= team.city %> <%= team.name %></a></option>
+            <% end %>
+          </select>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </div>
-    </div>
-  </form>
-<% else %>
-    <h1> You Must Be Logged in to Make Tweets </h1>
-<% end %>
+    </form>
+  <% else %>
+      <h1> You Must Be Logged in to Make Tweets </h1>
+  <% end %>
+</div>

@@ -1,10 +1,12 @@
-<h1> Welcome, <%= current_user.username %></h1>
-<h3>Here's the lastest:</h3>
+<div class="center">
+    <h1> Welcome, <%= current_user.username %></h1>
+    <h3>Here's the lastest:</h3>
 
-<% @posts.each do |post| %>
+    <% @posts.each do |post| %>
 
-    <a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a>
+        <a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a>
 
-    <a href="/posts/<%= post.id %>"><%= post.content %></a>
+        <a href="/posts/<%= post.id %>"><%= post.content %></a>
 
-<% end %>
+    <% end %>
+</div>

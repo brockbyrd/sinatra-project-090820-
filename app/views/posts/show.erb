@@ -1,11 +1,13 @@
-<a href="/users/<%= @post.user.slug %>">@<%= @post.user.username %></a>
+<div class="center">
+    <a href="/users/<%= @post.user.slug %>">@<%= @post.user.username %></a>
 
-<%= @post.content %>
+    <%= @post.content %>
 
-<% if @post.user.id == current_user.id %>
-    <a href="/posts/<%= @post.id %>/edit"><input type="submit" value="Edit"></a>
-    <form action="/posts/<%= @post.id %>/delete" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input class="submit" type="submit" value="Delete" id="Delete">
-    </form>
-<% end %>
+    <% if @post.user.id == current_user.id %>
+        <a href="/posts/<%= @post.id %>/edit"><input type="submit" value="Edit"></a>
+        <form action="/posts/<%= @post.id %>/delete" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input class="submit" type="submit" value="Delete" id="Delete">
+        </form>
+    <% end %>
+</div>

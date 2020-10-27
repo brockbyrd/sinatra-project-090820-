@@ -1,19 +1,21 @@
-<h1><%= @user.username %>'s posts!</h1>
+<div class="center">
+    <h1><%= @user.username %>'s posts!</h1>
 
-<% posts = @user.posts.sort_by {|post| post.id}.reverse %>
-<% posts.each do |post| %>
+    <% posts = @user.posts.sort_by {|post| post.id}.reverse %>
+    <% posts.each do |post| %>
 
-    <a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a>
-        
-    <a href="/posts/<%= post.id %>"><%= post.content %></a>
+        <a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a>
+            
+        <a href="/posts/<%= post.id %>"><%= post.content %></a>
 
-    <% if @user == current_user %>
-        <a href="/posts/<%= post.id %>/edit"><input type="submit" value="Edit"></a>
-        <form action="/posts/<%= post.id %>/delete" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input class="submit" type="submit" value="Delete" id="Delete">
-        </form>
-    <% end%>
+        <% if @user == current_user %>
+            <a href="/posts/<%= post.id %>/edit"><input type="submit" value="Edit"></a>
+            <form action="/posts/<%= post.id %>/delete" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input class="submit" type="submit" value="Delete" id="Delete">
+            </form>
+        <% end%>
 
 
-<% end %>
+    <% end %>
+</div>

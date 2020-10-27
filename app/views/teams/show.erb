@@ -1,3 +1,5 @@
+<div class="center">
+
 <h1><%= @team.city %> <%= @team.name %></h1>
 
     <% posts = @team.posts.sort_by {|post| post.id}.reverse %>
@@ -7,3 +9,4 @@
         <a href="/posts/<%= post.id %>"><%= post.content %></a>
 
     <% end %>
+</div>
