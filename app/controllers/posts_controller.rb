@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
     post '/posts' do
         if !authenticate
-            @post = current_user.posts.build(content: params[:content])
+            @post = current_user.posts.build(content: params[:content], team_id: params[:team_id])
                 if @post.save
                     redirect '/posts'
                 else
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
             @post = current_user.posts.find_by_id(params[:id])
             if @post
                 @post.destroy
-                redirect '/posts'
+                redirect '/'
             end
         end
     end

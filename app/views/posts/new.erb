@@ -5,21 +5,12 @@
       <p>Content:</p>
       <input type="text" name="content">
         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="team_id">
         <option selected>Choose Team...</option>
-        <form action="/teams/<%= @team.id %>" method='POST'>  
           <% Team.all.each do |team| %>
-            <option value="teams"><a class="dropdown-item" href="/teams/<%= team.id %>"> <%= team.city %> <%= team.name %></a></option>
+              <option id="<%= team.id %>" value="<%= team.id %>"><a class="dropdown-item"><%= team.city %> <%= team.name %></a></option>
           <% end %>
-        </form>
         </select>
-      </div>
-      <div class="col-auto my-1">
-        <div class="custom-control custom-checkbox mr-sm-2">
-          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-          <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
-        </div>
-      </div>
       <div class="col-auto my-1">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
