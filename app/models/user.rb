@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
     has_many :posts
     has_many :teams, through: :posts
     validates :username, :email, :password, presence: true
-
     def slug
         @slug = slugify(self.username)
     end
