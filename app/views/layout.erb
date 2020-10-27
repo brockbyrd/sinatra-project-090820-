@@ -24,9 +24,6 @@
       </li>
       <li class="nav-item dropdown">
 
-    </ul>
-
-    <ul class="navbar-nav">
       <div class="btn-group">
         <a class="nav-link dropdown-toggle active" href="/teams" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Teams</a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
@@ -34,11 +31,19 @@
             <a class="dropdown-item" href="/teams/<%= team.id %>"> <%= team.city %> <%= team.name %></a>
           <% end %>
       </div>
+
+    </ul>
+
+    <ul class="navbar-nav">
+ 
       <li class="nav-item active">
         <a class="nav-link" href="/teams/new">New Team<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="/posts/new">New Post<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
       </li>
 
     </ul>
