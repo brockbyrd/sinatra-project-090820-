@@ -1,7 +1,7 @@
 <div class="center">
-    <a href="/users/<%= @post.user.slug %>">@<%= @post.user.username %></a>
+    <h2><a href="/users/<%= @post.user.slug %>">@<%= @post.user.username %></a></h2>
 
-    <%= @post.content %>
+    <h3><%= @post.content %></h3>
 
     <% if @post.user.id == current_user.id %>
         <a href="/posts/<%= @post.id %>/edit"><input type="submit" value="Edit"></a>
