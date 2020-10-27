@@ -1,11 +1,30 @@
 <% if logged_in? %>
-
-    <form action='/posts' method='post'>
-    Content:
-    <input type="text" name="content">
-    Create Your Post:
-    <input type="submit" name="submit">
-
+  <form action='/posts' method='POST'>
+    <div class="form-row align-items-center">
+      <div class="col-auto my-1">
+      <p>Content:</p>
+      <input type="text" name="content">
+        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Choose Team...</option>
+        <form action="/teams/<%= @team.id %>" method='POST'>  
+          <% Team.all.each do |team| %>
+            <option value="teams"><a class="dropdown-item" href="/teams/<%= team.id %>"> <%= team.city %> <%= team.name %></a></option>
+          <% end %>
+        </form>
+        </select>
+      </div>
+      <div class="col-auto my-1">
+        <div class="custom-control custom-checkbox mr-sm-2">
+          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+          <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+        </div>
+      </div>
+      <div class="col-auto my-1">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
 <% else %>
     <h1> You Must Be Logged in to Make Tweets </h1>
 <% end %>
