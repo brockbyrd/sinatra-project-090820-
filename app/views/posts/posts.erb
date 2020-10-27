@@ -4,9 +4,10 @@
 
     <% @posts.each do |post| %>
 
-        <a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a>
+        <h4><a href="/users/<%= post.user.slug %>">@<%= post.user.username %></a></h4>
 
-        <a href="/posts/<%= post.id %>"><%= post.content %></a>
+        <h4><a href="/posts/<%= post.id %>"><%= post.content %></a></h4>
+        <br><br>
 
     <% end %>
 </div>

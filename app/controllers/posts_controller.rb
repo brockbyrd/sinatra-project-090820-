@@ -20,7 +20,7 @@ class PostsController < ApplicationController
                     redirect '/posts'
                 else
                     redirect '/posts/new'
-                end
+                end 
         end
     end
 
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
             @post = current_user.posts.find_by_id(params[:id])
             if @post
                 @post.destroy
-                redirect '/'
+                redirect "/posts"
             end
         end
     end

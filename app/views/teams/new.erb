@@ -1,11 +1,17 @@
-<% if logged_in? %>
-    <form action='/teams' method='post'>
-    City Name:
-    <input type="text" name="city">
-    Team Name:
-    <input type="text" name="name">
-    <input type="submit" name="Submit">
+<div class="center">
+    <% if logged_in? %>
+        <form action='/teams' method='post'>
+        <h2>City Name:</h2>
+        <input type="text" name="city">
+        <br>
+        <br>
+        <h2>Team Name:</h2>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <input type="submit" name="Submit">
 
-<% else %>
-    <h1> You Must Be Logged in to Make Tweets </h1>
-<% end %>
+    <% else %>
+        <h1> You Must Be Logged in to Make Tweets </h1>
+    <% end %>
+</div>

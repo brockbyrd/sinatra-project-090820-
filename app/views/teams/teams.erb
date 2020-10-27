@@ -1,0 +1,14 @@
+ <div class="center"> 
+    <h1> Welcome, <%= current_user.username %></h1>
+    <br>
+    <h3>Here's the teams:</h3>
+    <br>
+
+    <% @teams.each do |team| %>
+
+        <h2><a href="/teams/<%= team.id %>"><%= team.city %> <%= team.name %></a></h2>
+        <br>
+        <br>
+
+    <% end %>
+</div>

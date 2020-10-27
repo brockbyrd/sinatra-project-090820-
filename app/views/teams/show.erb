@@ -1,12 +1,11 @@
 <div class="center">
+    <h1><%= @team.city %> <%= @team.name %></h1>
 
-<h1><%= @team.city %> <%= @team.name %></h1>
+        <% posts = @team.posts.sort_by {|post| post.id}.reverse %>
+        <% @team.posts.each do |post| %>
 
-    <% posts = @team.posts.sort_by {|post| post.id}.reverse %>
-    <% @team.posts.each do |post| %>
+            <h4><a href="/users/<%= post.user.slug %>">@<%= post.user.username%></a></h4>
+            <h4><a href="/posts/<%= post.id %>"><%= post.content %></a></h4>
 
-        <a href="/users/<%= post.user.slug %>">@<%= post.user.username%></a>
-        <a href="/posts/<%= post.id %>"><%= post.content %></a>
-
-    <% end %>
+        <% end %>
 </div>
